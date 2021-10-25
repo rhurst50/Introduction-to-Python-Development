@@ -8,3 +8,8 @@ Generated the personal key below that is good for 2 months
 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
 
 Test for change
+
+For some reason after i tried to apply settings to remember my credentials the key above stopped working
+so I added another key which is below:
+
+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
