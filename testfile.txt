@@ -1,0 +1,5 @@
+This is a test file for purposes of testing git functions.
+I added the new repository in gitlab @ https://github.com/rhurst50/Introduction-to-Python-Development
+then I cloned the repository here in this server by passing:
+  git clone https://github.com/rhurst50/Introduction-to-Python-Development
+
