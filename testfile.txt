@@ -19,3 +19,6 @@ test for update
 Testing again for the update not sure wwhy it works once only
 
 testing for giggles second attempt with third key
+
+testing with git config credeential.helper store
+ran this from the Intro tp Python repo
