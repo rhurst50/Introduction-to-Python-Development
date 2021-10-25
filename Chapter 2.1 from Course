@@ -1,0 +1,207 @@
+Introduction to Python Development
+
+
+
+CHAPTER 2.1
+Installing Python 3.7 on CentOS 7
+
+
+ Learn how to install Python 3 from source on a CentOS 7 machine.
+
+Note: This course uses Python 3.7 and you will definitely run into issues if you are using Python < 3.7.
+
+Download and Install Python 3 from Source
+Here are the commands that we'll run to build and install Python 3.7:
+
+$ sudo -i
+$ yum groupinstall -y "development tools"
+$ yum install -y \
+  libffi-devel \
+  zlib-devel \
+  bzip2-devel \
+  openssl-devel \
+  ncurses-devel \
+  sqlite-devel \
+  readline-devel \
+  tk-devel \
+  gdbm-devel \
+  db4-devel \
+  libpcap-devel \
+  xz-devel \
+  expat-devel \
+  postgresql-devel
+
+$ cd /usr/src
+$ wget http://python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
+$ tar xf Python-3.7.2.tar.xz
+$ cd Python-3.7.2
+$ ./configure --enable-optimizations
+$ make altinstall
+$ exit
+Important: make altinstall causes it to not replace the built in python executable.
+
+Using sudo nano /etc/sudoers (or your preferred text editor), ensure that secure_path in /etc/sudoers file includes /usr/local/bin. The line should look something like this:
+
+Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+Upgrade Pip (might not be necesary)
+The version of pip that we have might be up-to-date, but it's a good practice to try to update it after the installation. We need to use the pip3.7 executable because we're working with Python 3, and we use sudo so that we can write files under the /usr/local directory.
+
+$ sudo pip3.7 install --upgrade pip
+--------------------------------------------------------------------------------
+
+BELOW is how to do it on Debian based in this example Ubuntu-------->
+
+Introduction to Python Development
+
+
+
+CHAPTER 2.2
+(Optional) Installing Python 3.7 on Debian/Ubuntu
+
+
+Learn how to install Python 3 from source on a Debian or Ubuntu machine. This video uses an Ubuntu 18.04 Linux Academy Cloud Server.
+
+Note: This course uses Python 3.7 and you will definitely run into issues if you are using Python < 3.7.
+
+Download and Install Python 3 from Source
+https://www.python.org/downloads/
+
+Here are the commands that we'll run to build and install Python 3:
+
+$ sudo -i
+$ apt update -y
+$ apt install -y \
+  wget \
+  build-essential \
+  libffi-dev \
+  libgdbm-dev \
+  libc6-dev \
+  libssl-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libncurses5-dev \
+  libncursesw5-dev \
+  xz-utils \
+  tk-dev
+
+$ cd /usr/src
+$ wget http://python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
+$ tar xf Python-3.7.2.tar.xz
+$ cd Python-3.7.2
+$ ./configure --enable-optimizations
+$ make altinstall
+Note: make altinstall causes it to not replace the built in python executable.
+
+Ensure that secure_path in /etc/sudoers file includes /usr/local/bin. The line should look something like this:
+
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+Upgrade Pip (might not be necesary)
+The version of pip that we have might be up-to-date, but it's a good practice to try to update it after the installation. We need to use the pip3.7 executable because we're working with Python 3, and we use sudo so that we can write files under the /usr/local directory.
+
+$ pip3.7 install --upgrade pip
+
+--------------------------------------------------------------------------------
+
+Introduction to Python Development
+
+
+CHAPTER 2.3
+Picking a Text Editor or IDE
+
+Before we start writing code, we should think about the tools that we're using to do the development. Having a well configured text editor can make the programming experience much more enjoyable. Much like a carpenter, having sharp tools leads to a more productive creative experience.
+
+Documentation For This Video
+Vim (https://www.vim.org/)
+Emacs (https://www.gnu.org/software/emacs/)
+Nano (https://www.nano-editor.org/)
+Atom (https://atom.io/)
+VS Code (https://code.visualstudio.com/)
+SublimeText (https://www.sublimetext.com/)
+Notepad++ (https://notepad-plus-plus.org/)
+PyCharm (https://www.jetbrains.com/pycharm/)
+
+
+Terminal Based Editors
+There are a few different terminal editors that you can work with. The main reason to use a terminal based editor is that you can run them on servers that you're connected to and you can stay in a terminal to carry out any programming task, whether that be developing the code, debugging, or deploying. There are two terminal based editors I would consider to be extremely popular:
+
+Vim - Modal editor, extremely customizable. (https://www.vim.org/)
+Emacs - Unbelievably customizable, not modal (at least not by default). (https://www.gnu.org/software/emacs/)
+Both of these tools are either pre-installed or readily available on all major Linux distros.
+
+The third option is Nano/Pico (https://www.nano-editor.org/) and it's more of a tool that I would suggest using if nothing else is available.
+
+For this course, I'll be using a lightly customized version of Vim.
+
+GUI Based Editors
+GUI based editors can be extremely powerful and more aestetically pleasing than terminal based editors. This list is comprised of classic "text editors", but most of them can be enhanced using plugins that add additional functionality. I'm going to divide them into two camps: native applications and Electron applications (built using JavaScript). This seems like a weird distinction, but plenty of people don't like the resource overhead that running Electron based applications requires.
+
+Native:
+
+SublimeText - Multi-platform. Very performant and extended using Python 3. (https://www.sublimetext.com/)
+Notepad++ - Windows only. Not as powerful as the others, but a good starter text editor that won't get in your way. (https://notepad-plus-plus.org/)
+Electron Based:
+
+Atom - The original Electron based editor. Aestetically pleasing and very extendable through plugins. (https://atom.io/)
+VS Code - Arguably the most popular GUI based editor. Vast ecosystem of plugins and built-in debugger. (https://code.visualstudio.com/)
+
+IDEs
+The primary IDE that is used by people in the Python community would be PyCharm (https://www.jetbrains.com/pycharm/). There is a free community edition and there is also a paid edition. To connect to a remote server to do your editing, you'll need to have the paid version.
+
+
+Introduction to Python Development
+
+--------------------------------------------------------------------------------
+
+CHAPTER 2.4
+(Optional) Setting Up a Vim Development Environment
+
+To get started with the course you're going to need a few things installed:
+
+Python 3
+Git
+A text editor of your choice
+My preferred text editor is Vim and that's what I'll be using throughout the course.
+
+For a great vim cheatsheet, see:
+https://linuxacademy.com/site-content/uploads/2019/05/vim-1.png
+
+This course is focused on using Python on a Linux system. You can definitely follow
+along on a Mac or Windows machine, but we won't be covering potential differences with those systems
+or how to install Python on Windows.
+
+I will be using CentOS 7 and if you'd like to follow along exactly we'll go through what you need to
+be able to use one of your Linux Academy Cloud Playground servers.
+
+Installing Development tools and Vim
+We've already installed most of what we need, but attempting to install development tools again won't hurt. Vim has yet to be installed, so we'll add that now:
+
+$ sudo yum update -y
+$ sudo yum groupinstall -y "development tools"
+$ sudo yum install -y vim-enhanced
+Configure git:
+This is just a best practice, but we'll want to configure Git to have our name and email address so that we can sign any commits that we make as we're developing.
+
+$ git config --global user.name "Keith Thompson"
+$ git config --global user.email "keith@linuxacademy.com"
+Pull down sample bashrc
+Having a comfortable development environment makes life easier. For this course, I'm going to use a slightly customized bash configuration to improve my experience in the terminal. You can chose to skip this step if you'd like. We can download this file from this course's Github repository:
+
+$ curl https://raw.githubusercontent.com/linuxacademy/content-intro-to-python-development/master/helpers/bashrc -o ~/.bashrc
+$ exec $SHELL
+The exec $SHELL reloaded our shell session and we can now see the customizations to the prompt. We'll come back to this in a second to see some enhancements that only show up when working within git repositories.
+
+Pull down sample vimrc
+Vim is a great text editor, but it doesn't have the best default settings. I've created a simple, yet usable vim configuration to use with this course that will improve our experience while writing Python code. Let's fetch this file now:
+
+$ curl https://raw.githubusercontent.com/linuxacademy/content-intro-to-python-development/master/helpers/vimrc -o ~/.vimrc
+Demonstrat PS1 changes
+One of the big changes in the bash configuration is that it adds support for showing information about the git repository that we're currently working in. Let's create a sample project so we can see what it shows:
+
+$ mkdir sample
+$ cd sample
+$ touch file.txt
+$ git init
+$ git add --all .
+$ git commit -m 'Initial commit'
