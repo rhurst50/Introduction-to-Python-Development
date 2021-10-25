@@ -7,3 +7,10 @@ the file "git-credentials' was created in my home repo and the contents are belo
 manually enter the username and personal acces token
 
 https://rhurst50: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@github.com
+
+Update after line above. Seems like after I pasted the line above which contains the active key, I beleive based on my observation that
+Github is running a security check of the contents in the backgroud for any stored keys that match text in any of the keys stored for the account
+If it sees a match I beleive that it is revoking the key(s) for the account access.
+So lesson learned. DO NOT KEEP KEY INFO INSIDE ANY REPO.
+Just run the 'git config credential.helper store' command and then login with the key via the command line and th key will be saved in teh
+file as indicated ablve.
