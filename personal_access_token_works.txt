@@ -2,3 +2,8 @@ the key worked with the following
 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
 will be good until November 25th then will have to update
 
+After successfully adding running the command 'git config credential.helper store' in the command line from the Intro to Python repo
+the file "git-credentials' was created in my home repo and the contents are below. Automatically connects without me havinbg to
+manually enter the username and personal acces token
+
+https://rhurst50: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@github.com
