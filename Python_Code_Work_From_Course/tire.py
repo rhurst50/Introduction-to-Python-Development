@@ -66,4 +66,4 @@ class snowTire(Tire):
         return round(total_diameter * math.pi, 1)
 
     def __repr__(self):
-        return super() + " (Snow)"
+        return super().__repr__() + " (Snow)"
