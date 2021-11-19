@@ -1,0 +1,19 @@
+#This is a standard file type for all python distributable packages that is used to create installable packages.
+#Uses setuptools - see https://docs.python.org/3/distributing/index.html
+
+from setuptools import find_packages, setup
+
+with open('README.md', 'r') as f:
+    long_description = f.read()
+
+setup(
+    name='pgbackup',
+    version='0.1.0',
+    author='Ryan Hurst'
+    author_email='rhurst@wabtec.com',
+    description='Autility for backing up PostgreSQL databases',
+    long_description=long_description,
+    long_description_content_type='text,markdown',
+    url='https://github.com/rhurst50/Introduction-to-Python-Development/tree/main/Python_Code_Work_From_Course',
+    packages=find_packages('src')
+)
