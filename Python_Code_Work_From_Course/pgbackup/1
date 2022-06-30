@@ -16,11 +16,11 @@ setup(
     long_description_content_type='text,markdown',
     url='https://github.com/rhurst50/Introduction-to-Python-Development/tree/main/Python_Code_Work_From_Course',
     packages=find_packages('src'),
-    package_dir={'': 'src'},
+    packages_dir{'': 'src'},
     install_requires=['boto3'],
     entry_points={
         'console_scripts': [
-            'pgbackup=pgbackup.cli:main',
-        ],
+            'pgbackup=pgbackup.cli:main'
+            ],
     }
 )
